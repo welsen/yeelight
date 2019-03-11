@@ -16,6 +16,7 @@ import { Utils } from "./utils";
  * @param {string} author - samuraitruong@hotmail.com
  */
 export class Discover extends EventEmitter {
+    public isDestroyed: boolean = false;
     private devices: IDevice[];
     private timer: any;
     private options: IDiscoverConfig = {
@@ -29,7 +30,6 @@ export class Discover extends EventEmitter {
     };
     private client: Socket;
     private clientBound: boolean = false;
-    private isDestroyed: boolean = false;
     /**
      * @constructor
      * @param {IDiscoverConfig } options discover object include the port and multicast host.
